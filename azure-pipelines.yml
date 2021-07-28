@@ -43,7 +43,7 @@ steps:
     azureSubscription: 'JacMar service principal'
     appType: 'webApp'
     WebAppName: 'jacmardotnet53'
-    DeploymentType: zipDeploy
+    DeploymentType: webDeploy
     packageForLinux: '$(Build.ArtifactStagingDirectory)'
 
     
