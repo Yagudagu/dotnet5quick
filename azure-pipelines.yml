@@ -42,8 +42,8 @@ steps:
     ConnectionType: 'AzureRM'
     azureSubscription: 'JacMar service principal'
     appType: 'webApp'
-    WebAppName: 'jacmardotnet53'
-    DeploymentType: webDeploy
+    WebAppName: 'jacmardotnet5'
+    #DeploymentType: webDeploy
     packageForLinux: '$(Build.ArtifactStagingDirectory)'
 
     
