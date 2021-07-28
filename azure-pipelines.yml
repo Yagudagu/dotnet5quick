@@ -20,16 +20,15 @@ steps:
     projects: '**/*.csproj'
     arguments: '--configuration $(buildConfiguration)' # Update this to match your need
     
-- task: AzurePowerShell@5
+      
+- task: PowerShell@2
   inputs:
-    azureSubscription: 'JacMar service principal'
-    ScriptType: 'InlineScript'
-    Inline: |
-      # You can write your azure powershell scripts inline here. 
-      # You can also pass predefined and custom variables to this script using arguments
-      New-Item $(Agent.BuildDirectory)\test.txt
-                  Set-Content $(Agent.BuildDirectory)\test.txt '$Build.BuildNumber'
-
+    targetType: 'inline'
+    script: |
+      # Write your PowerShell commands here.
+      
+      New-Item -Path $(Build.ArtifactStagingDirectory) -Name "testfile1.txt" -ItemType "file" -Value "$Build.BuildNumber"
+      
 - task: DotNetCoreCLI@2
   inputs:
     command: publish
