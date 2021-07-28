@@ -20,6 +20,11 @@ steps:
     projects: '**/*.csproj'
     arguments: '--configuration $(buildConfiguration)' # Update this to match your need
     
+- task: PowerShell@2
+  inputs:
+    script: New-Item $(System.DefaultWorkingDirectory)\test.txt
+            Set-Content $(System.DefaultWorkingDirectory)\test.txt '$Build.BuildNumber
+
 - task: DotNetCoreCLI@2
   inputs:
     command: publish
