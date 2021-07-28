@@ -20,10 +20,15 @@ steps:
     projects: '**/*.csproj'
     arguments: '--configuration $(buildConfiguration)' # Update this to match your need
     
-- task: PowerShell@2
+- task: AzurePowerShell@5
   inputs:
-    script: New-Item $(Agent.BuildDirectory)\test.txt
-            Set-Content $(Agent.BuildDirectory)\test.txt '$Build.BuildNumber'
+    azureSubscription: 'JacMar service principal'
+    ScriptType: 'InlineScript'
+    Inline: |
+      # You can write your azure powershell scripts inline here. 
+      # You can also pass predefined and custom variables to this script using arguments
+      New-Item $(Agent.BuildDirectory)\test.txt
+                  Set-Content $(Agent.BuildDirectory)\test.txt '$Build.BuildNumber'
 
 - task: DotNetCoreCLI@2
   inputs:
