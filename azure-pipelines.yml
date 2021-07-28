@@ -26,8 +26,8 @@ steps:
     targetType: 'inline'
     script: |
       # Write your PowerShell commands here.
-      cd Build.StagingDirectory
-      ls
+      cd $(Build.StagingDirectory)
+      Write-Host ls
       # New-Item -Path $(Build.StagingDirectory)/wwwroot -Name "testfile1.txt" -ItemType "file" -Value "$Build.BuildNumber"
       
 - task: DotNetCoreCLI@2
