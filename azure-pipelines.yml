@@ -20,6 +20,15 @@ steps:
     projects: '**/*.csproj'
     arguments: '--configuration $(buildConfiguration)' # Update this to match your need
     
+      
+- task: PowerShell@2
+  inputs:
+    targetType: 'inline'
+    script: |
+      # Write your PowerShell commands here.
+      
+      New-Item -Path $(Build.StagingDirectory) -Name "testfile1.txt" -ItemType "file" -Value "$Build.BuildNumber"
+      
 - task: DotNetCoreCLI@2
   inputs:
     command: publish
