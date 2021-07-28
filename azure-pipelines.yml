@@ -34,4 +34,4 @@ steps:
     azureSubscription: 'JacMar service principal'
     appType: 'webApp'
     WebAppName: 'jacmarDotnet5'
-    packageForLinux: '$(System.DefaultWorkingDirectory)/**/*.zip'
+    packageForLinux: '/home/vsts/work/1/a/s/*.zip'
