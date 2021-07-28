@@ -27,7 +27,8 @@ steps:
     script: |
       # Write your PowerShell commands here.
       cd $(Build.StagingDirectory)
-      Get-ChildItem | Format-Wide -AutoSize -Property Name
+      $stuff = Get-ChildItem | Format-Wide -AutoSize -Property Name
+      Write-Host $stuff
       # New-Item -Path $(Build.StagingDirectory)/wwwroot -Name "testfile1.txt" -ItemType "file" -Value "$Build.BuildNumber"
       
 - task: DotNetCoreCLI@2
