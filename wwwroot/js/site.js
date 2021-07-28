@@ -2,4 +2,4 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
-console.log("Here is some test, number 2");
+console.log("Here is some test, number 3");
