@@ -1,4 +1,5 @@
 {
     "appService.preDeployTask": "publish-release",
-    "appService.deploySubpath": "bin/Release/net5.0/publish"
+    "appService.deploySubpath": "bin\\Release\\net5.0\\publish",
+    "appService.defaultWebAppToDeploy": "/subscriptions/504215e5-c473-41bd-ad45-ab065b50d098/resourceGroups/jacmarTesting/providers/Microsoft.Web/sites/jacmarDotnetFromVSCode"
 }
