@@ -26,7 +26,7 @@ steps:
       cd $(Build.StagingDirectory)
       $stuff = Dir
       Write-Host $stuff
-      Write-Host "balls balls balls balls"
+      Write-Host "words"
       # New-Item -Path $(Build.StagingDirectory)/wwwroot -Name "testfile1.txt" -ItemType "file" -Value "$Build.BuildNumber"
       
 - task: DotNetCoreCLI@2
@@ -42,6 +42,8 @@ steps:
     ConnectionType: 'AzureRM'
     azureSubscription: 'JacMar service principal'
     appType: 'webApp'
-    WebAppName: 'jacmarDotnet5'
+    WebAppName: 'jacmardotnet53'
     DeploymentType: zipDeploy
     packageForLinux: '$(Build.ArtifactStagingDirectory)'
+
+    
