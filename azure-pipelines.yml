@@ -27,7 +27,7 @@ steps:
     script: |
       # Write your PowerShell commands here.
       cd $(Build.StagingDirectory)
-      $stuff = dir
+      $stuff = Dir
       Write-Host $stuff
       Write-Host "balls balls balls balls"
       # New-Item -Path $(Build.StagingDirectory)/wwwroot -Name "testfile1.txt" -ItemType "file" -Value "$Build.BuildNumber"
