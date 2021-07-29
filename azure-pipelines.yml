@@ -42,7 +42,7 @@ steps:
     ConnectionType: 'AzureRM'
     azureSubscription: 'JacMar service principal'
     appType: 'webApp'
-    WebAppName: 'jacmardotnet5'
+    WebAppName: 'jacmardotnet54'
     #DeploymentType: webDeploy
     enableCustomDeployment: true
     ExcludeFilesFromAppDataFlag: false
