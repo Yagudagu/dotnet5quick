@@ -58,9 +58,9 @@ steps:
     appType: 'webApp'
     WebAppName: 'jacmardotnet54'
     #DeploymentType: webDeploy
-    #RemoveAdditionalFilesFlag: true
+    RemoveAdditionalFilesFlag: true
     enableCustomDeployment: true
-    ExcludeFilesFromAppDataFlag: false
+    #ExcludeFilesFromAppDataFlag: false
     
     packageForLinux: '$(Build.StagingDirectory)'
 
