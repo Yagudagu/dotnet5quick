@@ -25,7 +25,7 @@ steps:
       # Write your PowerShell commands here.
       cd $(Build.StagingDirectory)
       $stuff = Dir
-      Write-Host $stuff
+      Write-Host $Build.BuildNumber
       Write-Host "words"
       # New-Item -Path $(Build.StagingDirectory)/wwwroot -Name "testfile1.txt" -ItemType "file" -Value "$Build.BuildNumber"
       
@@ -44,6 +44,8 @@ steps:
     appType: 'webApp'
     WebAppName: 'jacmardotnet5'
     #DeploymentType: webDeploy
+    enableCustomDeployment: true
+    ExcludeFilesFromAppDataFlag: false
     packageForLinux: '$(Build.ArtifactStagingDirectory)'
 
     
