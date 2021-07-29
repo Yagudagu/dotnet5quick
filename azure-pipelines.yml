@@ -18,17 +18,29 @@ steps:
   displayName: 'dotnet build $(buildConfiguration)'
   
 - script: dotnet publish --configuration $(BuildConfiguration) --output $(Build.Stagingdirectory)
-    
-      
+
 - task: PowerShell@2
   inputs:
     targetType: 'inline'
     script: |
+      git rev-parse --short HEAD > $(Build.Stagingdirectory)/wwwroot/version.txt
+      $COMMITHASH = type $(Build.Stagingdirectory)/wwwroot/version.txt
+      Write-Host "##vso[task.setvariable variable=GitVersionVar]$COMMITHASH"
+      Write-Host "$env:JOBHOST"
+      Write-Host "$env:SENTRYPROJECTNAME"
+      Write-Host "$env:SENTRYTOKEN"
+  displayName: 'Get Git Commit Hash'
+
+      
+#- task: PowerShell@2
+#  inputs:
+#    targetType: 'inline'
+#    script: |
       # Write your PowerShell commands here.
-      cd $(Build.StagingDirectory)
-      $stuff = Dir
-      Write-Host $Build.BuildNumber
-      Write-Host "words"
+#      cd $(Build.StagingDirectory)
+#      $stuff = Dir
+#      Write-Host $Build.BuildNumber
+#      Write-Host "words"
       # New-Item -Path $(Build.StagingDirectory)/wwwroot -Name "testfile1.txt" -ItemType "file" -Value "$Build.BuildNumber"
       
 #- task: DotNetCoreCLI@2
