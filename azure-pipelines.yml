@@ -16,6 +16,8 @@ steps:
 
 - script: dotnet build --configuration $(buildConfiguration)
   displayName: 'dotnet build $(buildConfiguration)'
+  
+- script: dotnet publish --configuration $(BuildConfiguration) --output $(Build.Stagingdirectory)
     
       
 - task: PowerShell@2
@@ -46,6 +48,6 @@ steps:
     #DeploymentType: webDeploy
     enableCustomDeployment: true
     ExcludeFilesFromAppDataFlag: false
-    packageForLinux: '$(Build.ArtifactStagingDirectory)'
+    packageForLinux: '$(Build.StagingDirectory)'
 
     
