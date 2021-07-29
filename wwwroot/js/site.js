@@ -3,5 +3,5 @@
 
 // Write your JavaScript code.
 console.log(
-  "major changes 4, electric boogaloo, the version edition second try"
+  "major changes 4, electric boogaloo, lets try here too I must believe"
 );
