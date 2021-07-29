@@ -44,6 +44,8 @@ namespace dotnet5quick
 
             app.UseHttpsRedirection();
 
+            app.UseStaticFiles();
+
             app.UseStaticFiles(new StaticFileOptions 
             {
                 FileProvider = new PhysicalFileProvider(
