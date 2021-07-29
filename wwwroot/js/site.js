@@ -2,4 +2,6 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
-console.log("Here is some test, number major changes 2, electric boogaloo");
+console.log(
+  "Here is some test, number major changes 3, electric boogaloo, the version edition"
+);
