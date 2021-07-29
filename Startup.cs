@@ -47,7 +47,7 @@ namespace dotnet5quick
             app.UseStaticFiles(new StaticFileOptions 
             {
                 FileProvider = new PhysicalFileProvider(
-                    Path.Combine(env.ContentRootPath, "version")),
+                    Path.Combine(env.ContentRootPath, ".")),
                 RequestPath = "/version"
             });
 
