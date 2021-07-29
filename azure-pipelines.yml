@@ -23,8 +23,8 @@ steps:
   inputs:
     targetType: 'inline'
     script: |
-      git rev-parse --short HEAD > $(Build.Stagingdirectory)/version.txt
-      $COMMITHASH = type $(Build.Stagingdirectory)/version.txt
+      git rev-parse --short HEAD > $(Build.Stagingdirectory)/wwwroot/version.txt
+      $COMMITHASH = type $(Build.Stagingdirectory)/wwwroot/version.txt
       Write-Host "##vso[task.setvariable variable=GitVersionVar]$COMMITHASH"
       Write-Host "$env:JOBHOST"
       Write-Host "$env:SENTRYPROJECTNAME"
