@@ -50,6 +50,10 @@ steps:
     arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
     zipAfterPublish: True
 
+- task: PublishPipelineArtifact@1
+  inputs:
+    targetPath: '$(Build.ArtifactStagingDirectory)' 
+    artifactName: 'jacmarDotnet5Pipe'
 
 # - task: AzureRmWebAppDeployment@4
 #   inputs:
