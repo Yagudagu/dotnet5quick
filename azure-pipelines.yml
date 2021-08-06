@@ -6,7 +6,8 @@
 trigger:
 - main
 
-pool: jacmarAgentPool
+pool: 
+  vmImage: 'ubuntu-18.04'
 
 variables:
   buildConfiguration: 'Release'
@@ -18,17 +19,17 @@ steps:
   
 - script: dotnet publish --configuration $(BuildConfiguration) --output $(Build.Stagingdirectory)
 
-- task: PowerShell@2
-  inputs:
-    targetType: 'inline'
-    script: |
-      git rev-parse --short HEAD > $(Build.Stagingdirectory)/wwwroot/version.txt
-      $COMMITHASH = type $(Build.Stagingdirectory)/wwwroot/version.txt
-      Write-Host "##vso[task.setvariable variable=GitVersionVar]$COMMITHASH"
-      Write-Host "$env:JOBHOST"
-      Write-Host "$env:SENTRYPROJECTNAME"
-      Write-Host "$env:SENTRYTOKEN"
-  displayName: 'Get Git Commit Hash'
+# - task: PowerShell@2
+#   inputs:
+#     targetType: 'inline'
+#     script: |
+#       git rev-parse --short HEAD > $(Build.Stagingdirectory)/wwwroot/version.txt
+#       $COMMITHASH = type $(Build.Stagingdirectory)/wwwroot/version.txt
+#       Write-Host "##vso[task.setvariable variable=GitVersionVar]$COMMITHASH"
+#       Write-Host "$env:JOBHOST"
+#       Write-Host "$env:SENTRYPROJECTNAME"
+#       Write-Host "$env:SENTRYTOKEN"
+#   displayName: 'Get Git Commit Hash'
 
       
 #- task: PowerShell@2
@@ -50,17 +51,17 @@ steps:
     #zipAfterPublish: True
 
 
-- task: AzureRmWebAppDeployment@4
-  inputs:
-    ConnectionType: 'AzureRM'
-    azureSubscription: 'JacMar service principal'
-    appType: 'webApp'
-    WebAppName: 'jacmarDotnet5Pipe'
-    #DeploymentType: webDeploy
-    RemoveAdditionalFilesFlag: true
-    enableCustomDeployment: true
-    #ExcludeFilesFromAppDataFlag: false
+# - task: AzureRmWebAppDeployment@4
+#   inputs:
+#     ConnectionType: 'AzureRM'
+#     azureSubscription: 'JacMar service principal'
+#     appType: 'webApp'
+#     WebAppName: 'jacmarDotnet5Pipe'
+#     #DeploymentType: webDeploy
+#     RemoveAdditionalFilesFlag: true
+#     enableCustomDeployment: true
+#     #ExcludeFilesFromAppDataFlag: false
     
-    packageForLinux: '$(Build.StagingDirectory)'
+#     packageForLinux: '$(Build.StagingDirectory)'
 
     
