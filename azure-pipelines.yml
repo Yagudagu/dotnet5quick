@@ -51,9 +51,9 @@ steps:
     zipAfterPublish: True
 
 - task: PublishBuildArtifacts@1
-  inputs:
-    targetPath: '$(Build.ArtifactStagingDirectory)' 
-    artifactName: 'jacmarDotnet5Pipe'
+  # inputs:
+  #   targetPath: '$(Build.ArtifactStagingDirectory)' 
+  #   artifactName: 'jacmarDotnet5Pipe'
 
 # - task: AzureRmWebAppDeployment@4
 #   inputs:
