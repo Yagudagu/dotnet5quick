@@ -6,8 +6,7 @@
 trigger:
 - main
 
-pool:
-  vmImage: windows-latest
+pool: jacmarAgentPool
 
 variables:
   buildConfiguration: 'Release'
@@ -56,7 +55,7 @@ steps:
     ConnectionType: 'AzureRM'
     azureSubscription: 'JacMar service principal'
     appType: 'webApp'
-    WebAppName: 'jacmardotnet54'
+    WebAppName: 'jacmarDotnet5Pipe'
     #DeploymentType: webDeploy
     RemoveAdditionalFilesFlag: true
     enableCustomDeployment: true
