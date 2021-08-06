@@ -38,3 +38,4 @@ C:\Users\jacmar\Documents\dotnet5quick\obj\Debug\net5.0\ref\dotnet5quick.dll
 C:\Users\jacmar\Documents\dotnet5quick\obj\Debug\net5.0\dotnet5quick.pdb
 C:\Users\jacmar\Documents\dotnet5quick\obj\Debug\net5.0\dotnet5quick.genruntimeconfig.cache
 C:\Users\jacmar\Documents\dotnet5quick\obj\Debug\net5.0\dotnet5quick.csproj.CopyComplete
+C:\Users\jacmar\Documents\dotnet5quick\bin\Debug\net5.0\web.config
