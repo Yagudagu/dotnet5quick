@@ -19,6 +19,10 @@ steps:
   
 # - script: dotnet publish --configuration $(BuildConfiguration) --output $(Build.Stagingdirectory)
 
+- task: PythonScript@0
+  inputs:
+    script: print('hello baby')
+
 # - task: PowerShell@2
 #   inputs:
 #     targetType: 'inline'
@@ -43,14 +47,14 @@ steps:
 #      Write-Host "words"
       # New-Item -Path $(Build.StagingDirectory)/wwwroot -Name "testfile1.txt" -ItemType "file" -Value "$Build.BuildNumber"
       
-- task: DotNetCoreCLI@2
-  inputs:
-    command: publish
-    publishWebProjects: True
-    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
-    zipAfterPublish: True
+# - task: DotNetCoreCLI@2
+#   inputs:
+#     command: publish
+#     publishWebProjects: True
+#     arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+#     zipAfterPublish: True
 
-- task: PublishBuildArtifacts@1
+# - task: PublishBuildArtifacts@1
   # inputs:
   #   targetPath: '$(Build.ArtifactStagingDirectory)' 
   #   artifactName: 'jacmarDotnet5Pipe'
