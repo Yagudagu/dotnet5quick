@@ -19,6 +19,13 @@ steps:
   
 # - script: dotnet publish --configuration $(BuildConfiguration) --output $(Build.Stagingdirectory)
 
+- task: PowerShell@2
+  inputs:
+    TargetType: inline
+    script: pip install azure-identity 
+            pip install azure-keyvault-secrets
+    
+
 - task: PythonScript@0
   inputs:
     scriptSource: filePath
