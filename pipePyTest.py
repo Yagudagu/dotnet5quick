@@ -1,6 +1,6 @@
-# import os
-# from azure.identity import DefaultAzureCredential
-# from azure.keyvault.secrets import SecretClient
+import os
+from azure.identity import DefaultAzureCredential
+from azure.keyvault.secrets import SecretClient
 
 # credential = ManagedIdentityCredential()
 # credentail = credential.get_token()
