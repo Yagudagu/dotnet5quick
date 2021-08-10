@@ -26,6 +26,13 @@ steps:
             pip install azure-keyvault-secrets
     
 
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'JacMar service principal'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: 'az login'
+
 # - task: PythonScript@0
 #   inputs:
 #     scriptSource: filePath
@@ -39,7 +46,6 @@ steps:
     key: 'CaDqYH0lM9N4zKjUBgZfiC/5Jlkf/nGDeq7yC0yZ0qL6cdDjfxIV5A=='
     method: 'GET'
     body: "a string"
-
     
 
 # - task: PowerShell@2
