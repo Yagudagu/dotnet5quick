@@ -36,7 +36,7 @@ steps:
 
 - task: AzureFunction@1
   inputs:
-    function: 'https://jacmarfunctest.azurewebsites.net/api/HttpTrigger1?code=liWFqfjjVgsIpxc7uQFI72cdpPgNgHvfnWqlLSDPPs3oKcxvJxdaFw=='
+    function: 'https://jacmarfunctest.azurewebsites.net/api/HttpTrigger1'
     key: 'liWFqfjjVgsIpxc7uQFI72cdpPgNgHvfnWqlLSDPPs3oKcxvJxdaFw=='
     method: 'GET'
     # body: |
