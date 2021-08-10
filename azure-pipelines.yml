@@ -38,7 +38,7 @@ steps:
     function: 'https://jacmarauthfunctest.azurewebsites.net/api/HttpTrigger1'
     key: 'CaDqYH0lM9N4zKjUBgZfiC/5Jlkf/nGDeq7yC0yZ0qL6cdDjfxIV5A=='
     method: 'GET'
-    body: "stuff"
+    body: {"stuff": "parameter"}
     waitForCompletion: 'true'
     
 
