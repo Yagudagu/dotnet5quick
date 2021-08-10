@@ -34,11 +34,11 @@ steps:
 #     scriptLocation: 'inlineScript'
 #     inlineScript: 'curl -X GET https://jacmarfunctest.azurewebsites.net/api/HttpTrigger1?code=liWFqfjjVgsIpxc7uQFI72cdpPgNgHvfnWqlLSDPPs3oKcxvJxdaFw=='
 
-- task: AzureFunction@1
-  inputs:
-    function: 'https://jacmarfunctest.azurewebsites.net/api/HttpTrigger1'
-    key: 'liWFqfjjVgsIpxc7uQFI72cdpPgNgHvfnWqlLSDPPs3oKcxvJxdaFw=='
-    method: 'GET'
+# - task: AzureFunction@1
+#   inputs:
+#     function: 'https://jacmarfunctest.azurewebsites.net/api/HttpTrigger1'
+#     key: 'liWFqfjjVgsIpxc7uQFI72cdpPgNgHvfnWqlLSDPPs3oKcxvJxdaFw=='
+#     method: 'GET'
     # body: |
     #   {
     #   "Name":"Jacob"
