@@ -2,7 +2,7 @@ import os
 from azure.identity import DefaultAzureCredential, ManagedIdentityCredential
 from azure.keyvault.secrets import SecretClient
 
-credential = DefaultAzureCredential()
+credential = ManagedIdentityCredential()
 token = credential.get_token('4815043d-dd36-4ffd-80fb-1e5736923579/.default')
 print(token)
 # request = HttpRequest(
