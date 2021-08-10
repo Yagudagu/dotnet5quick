@@ -39,11 +39,11 @@ steps:
     function: 'https://jacmarfunctest.azurewebsites.net/api/HttpTrigger1?code=liWFqfjjVgsIpxc7uQFI72cdpPgNgHvfnWqlLSDPPs3oKcxvJxdaFw=='
     key: 'liWFqfjjVgsIpxc7uQFI72cdpPgNgHvfnWqlLSDPPs3oKcxvJxdaFw=='
     method: 'GET'
-    body: |
-      {
-      "Name":"Jacob"
-      }
-    waitForCompletion: 'true'
+    # body: |
+    #   {
+    #   "Name":"Jacob"
+    #   }
+    # waitForCompletion: 'true'
 
 - task: PythonScript@0
   inputs:
