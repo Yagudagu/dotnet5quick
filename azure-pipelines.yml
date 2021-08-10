@@ -43,7 +43,7 @@ steps:
       {
       "Name":"Jacob"
       }
-    #waitForCompletion: 'true'
+    waitForCompletion: 'true'
 
 - task: PythonScript@0
   inputs:
