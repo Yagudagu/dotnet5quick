@@ -26,12 +26,12 @@ steps:
             pip install azure-keyvault-secrets
     
 
-- task: AzureCLI@2
-  inputs:
-    azureSubscription: 'JacMar service principal'
-    scriptType: 'bash'
-    scriptLocation: 'inlineScript'
-    inlineScript: 'curl -X GET https://jacmarfunctest.azurewebsites.net/api/HttpTrigger1?code=liWFqfjjVgsIpxc7uQFI72cdpPgNgHvfnWqlLSDPPs3oKcxvJxdaFw=='
+# - task: AzureCLI@2
+#   inputs:
+#     azureSubscription: 'JacMar service principal'
+#     scriptType: 'bash'
+#     scriptLocation: 'inlineScript'
+#     inlineScript: 'curl -X GET https://jacmarfunctest.azurewebsites.net/api/HttpTrigger1?code=liWFqfjjVgsIpxc7uQFI72cdpPgNgHvfnWqlLSDPPs3oKcxvJxdaFw=='
 
 - task: PythonScript@0
   inputs:
