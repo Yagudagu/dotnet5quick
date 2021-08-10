@@ -39,12 +39,7 @@ steps:
     key: 'CaDqYH0lM9N4zKjUBgZfiC/5Jlkf/nGDeq7yC0yZ0qL6cdDjfxIV5A=='
     method: 'GET'
     body: {"stuff": "parameter"}
-- task: AzureFunction@1
-  inputs:
-    function: 
-    method: 'POST'
-    waitForCompletion: 'false'
-    waitForCompletion: 'true'
+
     
 
 # - task: PowerShell@2
