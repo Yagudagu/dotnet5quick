@@ -27,28 +27,28 @@ steps:
             pip install azure-keyvault-secrets
     
 
-# - task: AzureCLI@2
+- task: AzureCLI@2
+  inputs:
+    azureSubscription: 'JacMar service principal'
+    scriptType: 'bash'
+    scriptLocation: 'inlineScript'
+    inlineScript: 'python pipePyTest.py'
+
+# - task: AzureFunction@1
 #   inputs:
-#     azureSubscription: 'JacMar service principal'
-#     scriptType: 'bash'
-#     scriptLocation: 'inlineScript'
-#     inlineScript: 'curl -X GET https://jacmarfunctest.azurewebsites.net/api/HttpTrigger1?code=liWFqfjjVgsIpxc7uQFI72cdpPgNgHvfnWqlLSDPPs3oKcxvJxdaFw=='
+#     function: 'https://jacmarfunctest.azurewebsites.net/api/HttpTrigger1'
+#     key: 'liWFqfjjVgsIpxc7uQFI72cdpPgNgHvfnWqlLSDPPs3oKcxvJxdaFw=='
+#     method: 'GET'
+#     # body: |
+#     #   {
+#     #   "Name":"Jacob"
+#     #   }
+#     # waitForCompletion: 'true'
 
-- task: AzureFunction@1
-  inputs:
-    function: 'https://jacmarfunctest.azurewebsites.net/api/HttpTrigger1'
-    key: 'liWFqfjjVgsIpxc7uQFI72cdpPgNgHvfnWqlLSDPPs3oKcxvJxdaFw=='
-    method: 'GET'
-    # body: |
-    #   {
-    #   "Name":"Jacob"
-    #   }
-    # waitForCompletion: 'true'
-
-- task: PythonScript@0
-  inputs:
-    scriptSource: filePath
-    scriptPath: pipePyTest.py
+# - task: PythonScript@0
+#   inputs:
+#     scriptSource: filePath
+#     scriptPath: pipePyTest.py
 
 
 
