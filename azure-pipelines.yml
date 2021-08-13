@@ -27,10 +27,10 @@ steps:
             pip install azure-keyvault-secrets
     
 
-- task: PythonScript@0
-  inputs:
-    scriptSource: filePath
-    scriptPath: pipePyTest.py
+# - task: PythonScript@0
+#   inputs:
+#     scriptSource: filePath
+#     scriptPath: pipePyTest.py
 
 - task: AzureCLI@2
   inputs:
