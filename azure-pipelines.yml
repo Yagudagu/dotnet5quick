@@ -37,7 +37,8 @@ steps:
     azureSubscription: 'JacMar service principal'
     scriptType: 'bash'
     scriptLocation: 'inlineScript'
-    inlineScript: 'python pytest/pipePyTest.py'
+    inlineScript: az account show
+    #inlineScript: 'python pytest/pipePyTest.py'
 
 # - task: AzureFunction@1
 #   inputs:
