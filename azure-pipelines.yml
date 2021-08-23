@@ -24,12 +24,17 @@ steps:
   
 # - script: dotnet publish --configuration $(BuildConfiguration) --output $(Build.Stagingdirectory)
 
+
 - task: PowerShell@2
   inputs:
     TargetType: inline
     script: pip install azure-identity 
             pip install azure-keyvault-secrets
-            python pytest/pipePyTest.py
+            
+- task: PowerShell@2
+  inputs:
+      targetType: 'inline'
+      script: 'python pytest/pipePyTest.py'
   env:
     AZURE_CLIENT_ID: $(AZURE_CLIENT_ID)
     AZURE_CLIENT_SECRET: $(AZURE_CLIENT_SECRET)
