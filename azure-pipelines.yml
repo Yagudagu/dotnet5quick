@@ -27,18 +27,18 @@ steps:
             pip install azure-keyvault-secrets
     
 
-# - task: PythonScript@0
-#   inputs:
-#     scriptSource: filePath
-#     scriptPath: pipePyTest.py
-
-- task: AzureCLI@2
+- task: PythonScript@0
   inputs:
-    azureSubscription: 'JacMar service principal'
-    scriptType: 'bash'
-    scriptLocation: 'inlineScript'
-    inlineScript: az account show
-    #inlineScript: 'python pytest/pipePyTest.py'
+    scriptSource: filePath
+    scriptPath: pipePyTest.py
+
+# - task: AzureCLI@2
+#   inputs:
+#     azureSubscription: 'JacMar service principal'
+#     scriptType: 'bash'
+#     scriptLocation: 'inlineScript'
+#     #inlineScript: az account show
+#     inlineScript: 'python pytest/pipePyTest.py'
 
 # - task: AzureFunction@1
 #   inputs:
