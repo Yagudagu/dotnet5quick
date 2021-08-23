@@ -29,13 +29,19 @@ steps:
     TargetType: inline
     script: pip install azure-identity 
             pip install azure-keyvault-secrets
-    
+            python pytest/pipePyTest.py
+  env:
+    AZURE_CLIENT_ID: $(AZURE_CLIENT_ID)
+    AZURE_CLIENT_SECRET: $(AZURE_CLIENT_SECRET)
+    AZURE_TENANT_ID: $(AZURE_TENANT_ID)
+    AZURE_SUBSCRIPTION_ID: $(AZURE_SUBSCRIPTION_ID)
+      
 
 
-- task: PythonScript@0
-  inputs:
-    scriptSource: filePath
-    scriptPath: pipePyTest.py
+# - task: PythonScript@0
+#   inputs:
+#     scriptSource: filePath
+#     scriptPath: pipePyTest.py
     
 
 # - task: AzureCLI@2
@@ -45,6 +51,7 @@ steps:
 #     scriptLocation: 'inlineScript'
 #     #inlineScript: az account show
 #     inlineScript: 'python pytest/pipePyTest.py'
+
 
 # - task: AzureFunction@1
 #   inputs:
