@@ -12,8 +12,8 @@ pool:
 
 variables:
 - group: PY_ENV
-- name: GLOBAL_AZURE_CLIENT_ID
-  value: $(AZURE_CLIENT_ID)
+# - name: GLOBAL_AZURE_CLIENT_ID
+#   value: $(AZURE_CLIENT_ID)
   #buildConfiguration: 'Release'
   # GLOBAL_AZURE_CLIENT_ID: $(AZURE_CLIENT_ID)
   # GLOBAL_AZURE_CLIENT_SECRET: $(AZURE_CLIENT_SECRET)
