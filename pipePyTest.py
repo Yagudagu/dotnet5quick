@@ -20,8 +20,9 @@ from azure.keyvault.secrets import SecretClient
 # print(token)
 
 clientId = os.environ['AZURE_CLIENT_ID']
+print("words1")
 print(clientId)
-
+print("words2")
 #MS
 credential = DefaultAzureCredential()
 token = credential.get_token('f7a7d278-cd60-4e46-bdb9-6ce664dff908/.default')
