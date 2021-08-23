@@ -11,6 +11,7 @@ pool:
   vmImage: 'ubuntu-18.04'
 
 variables:
+  group: PY_ENV
   buildConfiguration: 'Release'
   GLOBAL_AZURE_CLIENT_ID: $(AZURE_CLIENT_ID)
   GLOBAL_AZURE_CLIENT_SECRET: $(AZURE_CLIENT_SECRET)
