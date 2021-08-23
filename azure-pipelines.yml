@@ -38,11 +38,11 @@ steps:
 #     AZURE_SUBSCRIPTION_ID: $(AZURE_SUBSCRIPTION_ID)
       
 
-- task: UsePythonVersion@0
-  inputs:
-    versionSpec: '3.x'
-    addToPath: true
-    architecture: x64
+# - task: UsePythonVersion@0
+#   inputs:
+#     versionSpec: '3.x'
+#     addToPath: true
+#     architecture: x64
 
 - task: PowerShell@2
   inputs:
