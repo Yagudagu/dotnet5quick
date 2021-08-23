@@ -8,7 +8,7 @@ os.environ['AZURE_CLIENT_ID'] = "c2daa522-2517-4afe-a322-804c95dde128"
 os.environ['AZURE_CLIENT_SECRET'] = "44KvNW1krlR1IlWHE~js~1Jo~vk30_~vU_"
 
 credential = DefaultAzureCredential()
-token = credential.get_token('4815043d-dd36-4ffd-80fb-1e5736923579/.default')
+token = credential.get_token('07609e79-08a9-42fd-b0e6-ac4f334e86e1/.default')
 print(token)
 
 # request = HttpRequest(
