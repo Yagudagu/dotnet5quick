@@ -121,7 +121,7 @@ steps:
 #      Write-Host "words"
       # New-Item -Path $(Build.StagingDirectory)/wwwroot -Name "testfile1.txt" -ItemType "file" -Value "$Build.BuildNumber"
 
-steps:
+
 - task: DotNetCoreCLI@2
   displayName: Build
   inputs:
