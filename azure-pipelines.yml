@@ -22,10 +22,10 @@ variables:
 
 steps:
 
-- script: dotnet build --configuration $(buildConfiguration)
-  displayName: 'dotnet build $(buildConfiguration)'
+# - script: dotnet build --configuration $(buildConfiguration)
+#   displayName: 'dotnet build $(buildConfiguration)'
   
-- script: dotnet publish --configuration $(BuildConfiguration) --output $(Build.Stagingdirectory)
+# - script: dotnet publish --configuration $(BuildConfiguration) --output $(Build.Stagingdirectory)
 
 
 
@@ -120,18 +120,26 @@ steps:
 #      Write-Host $Build.BuildNumber
 #      Write-Host "words"
       # New-Item -Path $(Build.StagingDirectory)/wwwroot -Name "testfile1.txt" -ItemType "file" -Value "$Build.BuildNumber"
-      
-# - task: DotNetCoreCLI@2
-#   inputs:
-#     command: publish
-#     publishWebProjects: True
-#     arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
-#     zipAfterPublish: True
 
-# - task: PublishBuildArtifacts@1
-  # inputs:
-  #   targetPath: '$(Build.ArtifactStagingDirectory)' 
-  #   artifactName: 'jacmarDotnet5Pipe'
+steps:
+- task: DotNetCoreCLI@2
+  displayName: Build
+  inputs:
+    command: build
+    projects: '**/*.csproj'
+    arguments: '--configuration $(buildConfiguration)' # Update this to match your need
+
+- task: DotNetCoreCLI@2
+  inputs:
+    command: publish
+    publishWebProjects: True
+    arguments: '--configuration $(BuildConfiguration) --output $(Build.ArtifactStagingDirectory)'
+    zipAfterPublish: True
+
+- task: PublishBuildArtifacts@1
+  inputs:
+    targetPath: '$(Build.ArtifactStagingDirectory)' 
+    artifactName: 'jacmarDotnet5Pipe'
 
 # - task: AzureRmWebAppDeployment@4
 #   inputs:
